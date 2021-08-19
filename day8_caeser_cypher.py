@@ -17,27 +17,6 @@ def caesar(encode_decode, plain_text, shift_amount):
         cipher_text += new_letter
     print(f"The text is {cipher_text}")
 
+if shift > 25:
+    shift = shift%25
 caesar(encode_decode=direction, plain_text=text, shift_amount=shift)
-
-# def encrypt(plain_text, shift_amount):
-#     cipher_text = ""
-#     for letter in plain_text:
-#         new_position = alphabet.index(letter) + shift_amount
-#         if new_position > 25:
-#             new_position -= 25
-#         new_letter = alphabet[new_position]
-#         cipher_text += new_letter
-#     print(f"The encoded text is {cipher_text}")
-
-# def decrypt(encoded_text, shifted_amount):
-#     cipher_text = ""
-#     for letter in encoded_text:
-#         new_position = alphabet.index(letter) - shifted_amount
-#         new_letter = alphabet[new_position]
-#         cipher_text += new_letter
-#     print(f"The decoded text is {cipher_text}")
-
-# if direction == 'encode':
-#     encrypt(plain_text = text, shift_amount = shift)
-# else:
-#     decrypt(encoded_text = text, shifted_amount = shift)
