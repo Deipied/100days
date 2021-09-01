@@ -1,8 +1,12 @@
 import re
 def camelCaseFour(s):
     if s[0] == "S":
-        str = re.findall('[A-Z][A-Z]*', s[4:])
-        return s[4:]
+        if s[2] == "M":
+            s = s[:-2]
+        s = re.findall('.[^A-Z]*', s[4:])
+        for i in range(len(s)):
+            s[i] = s[i].lower()                        
+        return " ".join(s)
     #     s.rstrip("()")
     #     if s[2] == "M":
     #         str[len(str)-1]
@@ -21,4 +25,4 @@ def camelCaseFour(s):
     #         str.title()
     #     return "".join(str)
 
-print(camelCaseFour("S;V;pictureFrame"))
+print(camelCaseFour("S;M;pictureFrame()"))
